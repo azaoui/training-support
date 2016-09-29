@@ -1,0 +1,28 @@
+
+<%
+
+import java.util.List;
+import org.exoplatform.social.core.space.model.Space;
+import org.exoplatform.social.core.space.spi.SpaceService; 
+ List<Space>  userSpaces= uicomponent.mySpaceList();
+%>
+
+
+<div class="uiSpaceNavigationPortlet" id="$uicomponent.id">
+  <h5>Mes espaces </h5>
+        <ul class="spaceNavigation ">
+
+    <%
+      for(space in userSpaces) {
+                        String spaceName = space.getDisplayName();
+     %>
+                                <li class="spaceItem">
+                                    $spaceName   
+                                </li>
+        <%        } %> <!-- END FOR -->
+
+
+    <!-- FIN -->
+
+        </ul>
+</div>
